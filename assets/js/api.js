@@ -13,18 +13,21 @@ async function apiGet(action) {
     }
 
     catch (error) {
-
-        console.error(error);
-
+    
+        console.error(
+            "API ERROR:",
+            error
+        );
+    
         return {
-
+    
             success: false,
-
+    
             message:
-                "Gagal terhubung ke server"
-
+                error.message
+    
         };
-
+    
     }
 
 }
@@ -59,22 +62,22 @@ async function apiPost(data) {
 
     }
 
-catch (error) {
-
-    console.error(
-        "API ERROR:",
-        error
-    );
-
-    return {
-
-        success: false,
-
-        message:
-            error.message
-
-    };
-
-}
+    catch (error) {
+    
+        console.error(
+            "API ERROR:",
+            error
+        );
+    
+        return {
+    
+            success: false,
+    
+            message:
+                error.message
+    
+        };
+    
+    }
 
 }
