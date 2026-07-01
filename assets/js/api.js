@@ -36,48 +36,38 @@ async function apiPost(data) {
 
     try {
 
+        console.log("API URL:", CONFIG.API_URL);
+        console.log("Request Data:", data);
+
         const response = await fetch(
-
             CONFIG.API_URL,
-
             {
-
                 method: "POST",
-
                 headers: {
-
-                    "Content-Type":
-                        "application/json"
-
+                    "Content-Type": "application/json"
                 },
-
-                body:
-                    JSON.stringify(data)
-
+                body: JSON.stringify(data)
             }
-
         );
 
-        return await response.json();
+        console.log("Response Status:", response.status);
+
+        const result = await response.json();
+
+        console.log("Response:", result);
+
+        return result;
 
     }
-
     catch (error) {
-    
-        console.error(
-            "API ERROR:",
-            error
-        );
-    
+
+        console.error("FETCH ERROR:", error);
+
         return {
-    
             success: false,
-    
-            message:
-                error.message
-    
+            message: error.message
         };
-    
+
     }
 
 }
