@@ -1,1 +1,22 @@
-/* Style utama aplikasi */
+:root {
+
+    --primary-color: #8B4513;
+    --secondary-color: #D2B48C;
+    --success-color: #198754;
+    --background-color: #F8F5F2;
+
+}
+
+body {
+
+    background-color: var(
+        --background-color
+    );
+
+}
+
+.card {
+
+    border-radius: 15px;
+
+}
