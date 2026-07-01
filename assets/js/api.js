@@ -59,19 +59,22 @@ async function apiPost(data) {
 
     }
 
-    catch (error) {
+catch (error) {
 
-        console.error(error);
+    console.error(
+        "API ERROR:",
+        error
+    );
 
-        return {
+    return {
 
-            success: false,
+        success: false,
 
-            message:
-                "Gagal terhubung ke server"
+        message:
+            error.message
 
-        };
+    };
 
-    }
+}
 
 }
